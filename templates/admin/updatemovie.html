@@ -1,0 +1,41 @@
+{% extends "admin/base.html" %}
+{% block content %}
+    <div class="custom-wrapper">
+        <div class="custom-title">
+            <b>Update Movies</b>
+        </div>
+        <form method="post" class="form" enctype="multipart/form-data" action="{% url 'updatedone' movie.id %}">
+            {% csrf_token %}
+            <div class="custom-inputfield">
+                <label class="custom-label"><b>Movie Name</b></label>
+                <input class="custom-input" type="text" name="name" placeholder="Movie Name" value="{{ movie.name }}">
+            </div>
+            <div class="custom-inputfield">
+                <label class="custom-label"><b>Genre</b></label>
+                <input class="custom-input" type="text" name="genre" placeholder="Genre" value="{{ movie.genre }}">
+            </div>
+            <div class="custom-inputfield">
+                <label class="custom-label"><b>Content Rating</b></label>
+                <input class="custom-input" type="text" name="contentrating" placeholder="Content Rating" value="{{ movie.contentrating }}">
+            </div>
+            <div class="custom-inputfield">
+                <label class="custom-label"><b>Poster</b></label>
+                <input type="file" class="custom-input" name="poster" placeholder="Poster">
+            </div>
+            <div class="custom-inputfield">
+                <label class="custom-label"><b>Content URL</b></label>
+                <input class="custom-input" type="text" name="contentURL" placeholder="Content URL" value="{{ movie.contentURL }}">
+            </div>
+            <div class="custom-inputfield">
+                <label class="custom-label"><b>Release Date</b></label>
+                <input class="custom-input" type="text" name="releasedate" placeholder="Release Date" value="{{ movie.releasedate }}">
+            </div>
+
+            <div class="custom-inputfield">
+                <button class="custom-btn" type="submit">Update Movie</button>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}
+

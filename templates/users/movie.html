@@ -1,0 +1,37 @@
+{% extends 'users/base.html' %}
+{% block content %}
+    <div class="content">
+        <div class="moviecontent">
+            <h1>{{ movie.name }}</h1>
+            <ul>
+                <li>{{ movie.genre }}</li>
+                <li>Content Rating: {{ movie.contentrating }}</li>
+                <li>{{ movie.rating }}/10</li>
+            </ul>
+            <div class="video">
+                <iframe src="{{ movie.contentURL }}?autoplay=1" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="comments">
+            <h2>Comments</h2>
+            <form method="post" id="commentform" action="{% url 'comment' movie.id %}" class="form">
+                {% csrf_token %}
+                <div class="custom-inputfield">
+                    <textarea class="custom-textarea" id="comment" name="comment" placeholder="Comment here"></textarea>
+                </div>
+                <div class="custom-inputfield">
+                    <button class="custom-btn" type="submit">Comment</button>
+                </div>
+            </form>
+            {% for comment in comments %}
+                <div class="eachcomment">
+                    <div class="custom-label"><b>User: {{ comment.username }}</b></div>
+
+                    <div class="custom-label" >Comment: {{ comment.comment }}</div>
+                </div>
+            {% endfor %}
+        </div>
+
+    </div>
+{% endblock %}

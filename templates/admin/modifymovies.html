@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modify Movies</title>
+</head>
+<body>
+    {% for movie in movies %}
+    <div class="container" onclick="location.href='{% url 'movie' movie.id%}'">
+        <h1>{{movie.id}}</h1>
+        <h3>{{movie.genre}}</h3>
+        <h3>{{ movie.rating }}</h3>
+        <h3>{{ movie.contentrating }}</h3>
+        <h3>{{ movie.releasedate }}</h3>
+        <a href="{% url 'updatemovie' movie.id%}">Update Movie</a>
+        <a href="{% url 'deletemovies' movie.id %}">Delete Movie</a>
+        <img src="{{ movie.poster }}" width="300" height="600">
+    </div>
+{% endfor %}
+</body>
+</html>
