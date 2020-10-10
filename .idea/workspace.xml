@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="db087817-b548-4f1c-9854-567eb12e0d51" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/MovieStreaming/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/MovieStreaming/settings.py" afterDir="false" />
-    </list>
+    <list default="true" id="db087817-b548-4f1c-9854-567eb12e0d51" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,21 +29,21 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\AJINKYA\PycharmProjects\MovieStreaming\templates" />
-      <recent name="C:\Users\AJINKYA\PycharmProjects\MovieStreaming" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\AJINKYA\PycharmProjects\MovieStreaming\static\admin\css" />
       <recent name="C:\Users\AJINKYA\PycharmProjects\MovieStreaming\static\authentication\css" />
       <recent name="C:\Users\AJINKYA\PycharmProjects\MovieStreaming\authentication" />
       <recent name="C:\Users\AJINKYA\PycharmProjects\MovieStreaming\static" />
       <recent name="C:\Users\AJINKYA\PycharmProjects\MovieStreaming\static\css\authentication" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\AJINKYA\PycharmProjects\MovieStreaming" />
+      <recent name="C:\Users\AJINKYA\PycharmProjects\MovieStreaming\templates" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -98,8 +96,16 @@
       <workItem from="1602135470309" duration="27689000" />
       <workItem from="1602223211026" duration="17512000" />
       <workItem from="1602241482196" duration="30226000" />
-      <workItem from="1602278134121" duration="2755000" />
+      <workItem from="1602278134121" duration="19620000" />
     </task>
+    <task id="LOCAL-00001" summary="add procfile">
+      <created>1602280942211</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1602280942211</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -115,5 +121,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add procfile" />
+    <option name="LAST_COMMIT_MESSAGE" value="add procfile" />
   </component>
 </project>
