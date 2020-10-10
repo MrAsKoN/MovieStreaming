@@ -30,7 +30,7 @@ Admin can add a new movie by specifying the each and every detail about the movi
 
 
 Similarly, admin can update details of any movie by modifying the 'Update Movies' form.
-![register](/images/update form.JPG)
+![register](/images/updateform.JPG)
 
 
 Lastly, admin can also delete movies.
