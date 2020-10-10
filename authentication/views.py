@@ -19,21 +19,21 @@ def register(request):
 
         data = {"username": username, "email": email, 'isAdmin': False}
         db.collection('users').document(user.uid).set(data) #add user data to cloud firestore database
-        return redirect('home')
-    return render(request, 'authentication/register.html')
+        return redirect('home') #After successfully creating user and adding user's credentials to the database redirect to home page
+    return render(request, 'authentication/register.html') #If no POST request, then redirect to register page again
 
 
 def login(request):
-    if request.method == 'POST':
+    if request.method == 'POST': #if POST request
         email = request.POST.get('email')
-        password = request.POST.get('password')
+        password = request.POST.get('password') #retreive details from input fields
         user = None
-        if (email and password):
+        if (email and password): #if details retreived are non-empty
             try:
-                user = pyfirebase.auth().sign_in_with_email_and_password(email, password)
+                user = pyfirebase.auth().sign_in_with_email_and_password(email, password) #using firebase authentication to authenticate user via pyrebase
             except:
-                messages.error(request,"Invalid Credentials")
-                return render(request, 'authentication/login.html')
+                messages.error(request,"Invalid Credentials") #error is occured if details are invalid
+                return render(request, 'authentication/login.html') # in that case
             session_id = user['localId']
             request.session['uid'] = session_id
             return redirect('home')
