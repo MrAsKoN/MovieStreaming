@@ -22,8 +22,7 @@ def movie(request, id):
         for comment in comments:
             commentsdata.append(comment.to_dict()) #convert comments data from document references to dictionary
         print(commentsdata)
-        return render(request, 'users/movie.html',
-                      context={"movie": movie.to_dict(), "comments": commentsdata})  #render movie template with movie details and comments data in context
+        return render(request, 'users/movie.html',context={"movie": movie.to_dict(), "comments": commentsdata})  #render movie template with movie details and comments data in context
     return redirect('login')  #if user isnt authenticated redirect him/her to login page
 
 
@@ -36,5 +35,5 @@ def comment(request, id):
 
                 db.collection('movies').document(id).collection('comments').add(  #add the comment to comments part of that particular movie
                     {"uid": request.session['uid'], "comment": comment, "username": curruser.to_dict()['username']})
-        return redirect('movie', id=id) #if no POST request then redirect to the same page
+        return redirect('movie',id=id) #if no POST request then redirect to the same page
     return redirect('login') #if user isnt authenticated redirect him/her to login page

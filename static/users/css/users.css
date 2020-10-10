@@ -226,6 +226,11 @@ body{
     padding:0 10px 0 0;
 }
 
+.custom-card .card-right .card-right-details ul li:last-child{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
 .custom-card .card-right .card-right-details .card-description p{
     color:white;
     font-size:12px;

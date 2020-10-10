@@ -29,7 +29,6 @@ urlpatterns = [
     path('logout/', auth_views.logout, name='logout'),
     path('comment/<str:id>/', users_views.comment, name='comment'),
     path('addmovies/', admin_views.addmovies, name='addmovies'),
-    path('modifymovies/', admin_views.modifymovies, name='modifymovies'),
     path('updatemovie/<str:id>/', admin_views.updatemovie, name='updatemovie'),
     path('updatedone/<str:id>/', admin_views.updatedone, name='updatedone'),
     path('deletemovies/<str:id>/', admin_views.deletemovies, name='deletemovies'),

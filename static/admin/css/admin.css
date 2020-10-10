@@ -234,9 +234,14 @@ body{
     padding:0 10px 0 0;
 }
 
+.custom-card .card-right .card-right-details ul li:last-child{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
 .custom-card .card-right .card-right-details .card-description p{
     color:white;
-    font-size:12px;
+    font-size:15px;
     padding:0 20px 0 20px;
     letter-spacing:1px;
     margin:10px 0 10px 0;
@@ -383,4 +388,14 @@ body{
     margin-bottom: 15px;
     display: flex;
     align-items: center;
+}
+
+.custom-textarea{
+    width: 100%;
+    outline: none;
+    border: 1px solid #d5dbd9;
+    font-size: 15px;
+    padding: 8px 10px;
+    border-radius: 3px;
+    transition: all 0.3s ease;
 }
