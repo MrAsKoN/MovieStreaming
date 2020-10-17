@@ -3,6 +3,11 @@
 A responsive web application for movie streaming where users can watch any movies, comments their opinions about the movies and admins can add movies, modify movie content etc. The application is built using Django, Pyrebase and firebase-admin SDK.
 Pyrebase was used for accessing firebase storage and authentication. firebase-admin SDK was used for accessing Cloud Firestore.
 
+
+### Responsive Web Page
+![register](/images/responsive.JPG)
+
+
 ## Functionality
 
 Users can register in the application.
