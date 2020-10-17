@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="db087817-b548-4f1c-9854-567eb12e0d51" name="Default Changelist" comment="" />
+    <list default="true" id="db087817-b548-4f1c-9854-567eb12e0d51" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieStreaming/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/MovieStreaming/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/admin/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/authentication/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/authentication/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/users/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/users/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +107,8 @@
       <workItem from="1602135470309" duration="27689000" />
       <workItem from="1602223211026" duration="17512000" />
       <workItem from="1602241482196" duration="30226000" />
-      <workItem from="1602278134121" duration="19620000" />
+      <workItem from="1602278134121" duration="21874000" />
+      <workItem from="1602939928024" duration="5353000" />
     </task>
     <task id="LOCAL-00001" summary="add procfile">
       <created>1602280942211</created>
@@ -116,7 +128,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

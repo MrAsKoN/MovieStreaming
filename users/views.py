@@ -3,14 +3,17 @@ from config import db
 
 
 def home(request):
-    if 'uid' in request.session: #if user is authenticated let him/her in
+    if 'uid' in request.session:  # if user is authenticated
+        user = db.collection('users').document(request.session['uid']).get().to_dict()  # retreive current user details
+        if user['isAdmin']:  # check if user is Admin
+            return redirect('adminhome') #redirect him/her to adminhome
         movies = db.collection('movies').get() #retreive movies from cloud firestore
 
         moviesdata = []
         for movie in movies:
             moviesdata.append(movie.to_dict()) #convert document references to dictionary
 
-        return render(request, 'users/home.html', context={"moviesdata": moviesdata, 'uid': request.session['uid']}) #render home template with movies data in context
+        return render(request, 'users/home.html', context={"moviesdata": moviesdata}) #render home template with movies data in context
     return redirect('login') #if user isnt authenticated redirect him/her to login page
 
 

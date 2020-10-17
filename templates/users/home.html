@@ -3,7 +3,7 @@
     <div class="content">
         {% for movie in moviesdata %}
             <div class="item-wrap">
-                <div class="custom-card" onclick="location.href='{% url 'movie' movie.id%}'">
+                <div class="custom-card" onclick="location.href='{% url 'movie' movie.id %}'">
                     <div class="card-left">
                         <img src="{{ movie.poster }}">
                     </div>

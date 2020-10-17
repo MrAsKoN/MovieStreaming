@@ -1,5 +1,6 @@
+from django.contrib import messages
 from django.shortcuts import render, redirect
-from config import db, storage
+from config import db, storage, auth
 
 
 def adminhome(request):
@@ -14,7 +15,8 @@ def adminhome(request):
 
             return render(request, 'admin/home.html',
                           context={"moviesdata": moviesdata, 'uid': request.session['uid']})  # render admin's home page
-        return render(request,'users/home.html',context={'uid':request.session['uid']})  # if user is not an admin then redirect him/her to user home page
+        return render(request, 'users/home.html', context={
+            'uid': request.session['uid']})  # if user is not an admin then redirect him/her to user home page
     return redirect('login')  # if user isnt authenticated redirect him/her to login page
 
 
@@ -30,7 +32,8 @@ def addmovies(request):
                 poster = request.FILES['poster']
                 releasedate = request.POST.get('releasedate')
                 description = request.POST.get('description')
-                if (name and genre and contentrating and contentURL and releasedate and description):  # if all fields are non empty
+                if (
+                        name and genre and contentrating and contentURL and releasedate and description):  # if all fields are non empty
                     if 'poster' in request.FILES:  # if poster(image) exists
 
                         storage.child('movies/posters/' + name).put(poster)  # add image to firebase storage
@@ -56,7 +59,8 @@ def updatemovie(request, id):
 
         if user['isAdmin']:  # check if user is Admin
             movie = db.collection('movies').document(id).get().to_dict()  # retreive that particular movie with given id
-            return render(request, 'admin/updatemovie.html',context={"movie": movie})  # pass movie details for further updating movie details
+            return render(request, 'admin/updatemovie.html',
+                          context={"movie": movie})  # pass movie details for further updating movie details
         return redirect('home')  # if user is not admin, redirect to user's home page
     return redirect('login')  # if user is not authenticated, then redirect to login page
 
@@ -91,7 +95,7 @@ def updatedone(request, id):
                                  'contentURL': contentURL, 'releasedate': releasedate}
                     db.collection('movies').document(id).update(movie)  # update details in the database
                     return redirect('adminhome')  # After successfully updating movie details return
-            return redirect('updatemovie',id=id)
+            return redirect('updatemovie', id=id)
         return redirect('home')
     return render(request, 'authentication/login.html')
 
@@ -106,3 +110,29 @@ def deletemovies(request, id):
             return redirect('adminhome')  # redirect to admin home page
         return redirect('home')  # if user is not admin then return to user's home page
     return redirect('login')  # if user is not authenticated then redirect to home page
+
+
+def adminregister(request):
+    if 'uid' in request.session:  # if user is authenticated
+        user = db.collection('users').document(request.session['uid']).get().to_dict()  # retreive current user details
+
+        if user['isAdmin']:  # check if user is Admin
+            if request.method == 'POST':
+                username = request.POST.get('username')
+                email = request.POST.get('email')
+                password = request.POST.get('password')
+                user = None
+                if not (username and email and password):  # if any field is empty redirect to the same page again
+                    return render(request, 'admin/adminregister.html')
+                try:
+                    user = auth.create_user(email=email, password=password)  # create user using firebase-admin.auth()
+                except:
+                    messages.error(request, "Admin Already exists!")  # If user exists then, error is thrown.
+                    return render(request, 'admin/adminregister.html')  # redirect to register page again
+
+                data = {"username": username, "email": email, 'isAdmin': True} # Setting 'isAdmin'= True depicting admin functionality
+                db.collection('users').document(user.uid).set(data)  # add user data to cloud firestore database
+                messages.success(request, "Admin Registration Successful!")
+                return redirect('adminhome')  # After successfully creating new admin and adding his/her credentials to the database redirect to home page
+            return render(request,
+                          'admin/adminregister.html')  # If no POST request, then redirect to register page again
